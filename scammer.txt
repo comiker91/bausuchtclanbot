@@ -80,10 +80,3 @@ SUPERJOE_34084 = Unbekannt
 VXOTIICS = Unbekannt
 MEPHISTOQ = Aus SAO zum Scamm!
 KING_KANE_ = Divese Methoden!
-COMIKER = lustig
-WEGEN = idee
--> = add
-MARVIN = e
-= = ;)
-MARVIN = Marvellous;)
-DIR] = marvin
