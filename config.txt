@@ -1,0 +1,12 @@
+Grundeinstellungen:
+Wartezeit = 4
+Server Einstellungen:
+Spielen Button x = 978
+Spiele Button y = 787
+Fenster vergrößern x = 1322
+Fenster vergrößern y = 308
+Mehrspieler x = 962
+Mehrspieler y = 442
+Server x = 955
+Server y = 146
+AFK Home = 123
