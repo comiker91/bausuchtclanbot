@@ -57,6 +57,18 @@ class scammabfrage():
                             pyautogui.keyDown("t")
                             pyautogui.keyUp("t")
                             time.sleep(1)
+                    elif "!COMIKER91!" in leser[-1].upper():
+                        pyautogui.keyDown("Ctrl")
+                        pyautogui.keyDown("a")
+                        pyautogui.keyUp("a")
+                        pyautogui.keyUp("Ctrl")
+                        infomsgs = ("/r [BOT]Ja ich bin von comiker91 Programmiert!["+spamschutz+"]")
+                        pyautogui.write(infomsgs)
+                        pyautogui.keyDown("return")
+                        pyautogui.keyUp("return")
+                        pyautogui.keyDown("t")
+                        pyautogui.keyUp("t")
+                        time.sleep(1)                        
                     else:
                         ausg = leser[-1]
                         teiler = ausg.split(" ")
