@@ -5,6 +5,7 @@ import os
 import string
 import random
 from tkinter import *
+from scr import suche
 
 werbe_stop = 0
 sammler = []
@@ -26,12 +27,15 @@ class preisauskunft():
             spamschutz = ''.join(random.choice(letters) for i in range(3))
             if  "[SECOND CHAT]"in leser[-1]:
                 if "-> Dir" in leser[-1]:
-                    if "INFO" in leser[-1].upper():
+                    split = leser[-1].split("[")
+                    spieler = split[6].split(" ")
+                    name = spieler[0]
+                    if "Info" in leser[-1]:
                         pyautogui.keyDown("Ctrl")
                         pyautogui.keyDown("a")
                         pyautogui.keyUp("a")
                         pyautogui.keyUp("Ctrl")
-                        infomsgs = ("/r [BOT]Sende mir ein Itemname und ich antworte dir mit dem ca Preis!["+spamschutz+"]")
+                        infomsgs = ("/msg "+name+" [BOT]Sende mir ein Itemname und ich antworte dir mit dem ca Preis!["+spamschutz+"]")
                         pyautogui.write(infomsgs)
                         pyautogui.keyDown("return")
                         pyautogui.keyUp("return")
@@ -43,50 +47,49 @@ class preisauskunft():
                         pyautogui.keyDown("a")
                         pyautogui.keyUp("a")
                         pyautogui.keyUp("Ctrl")
-                        infomsgs = ("/r [BOT]Ja ich bin von comiker91 Programmiert!["+spamschutz+"]")
+                        infomsgs = ("/msg "+name+" [BOT]Ja ich bin von comiker91 Programmiert!["+spamschutz+"]")
                         pyautogui.write(infomsgs)
                         pyautogui.keyDown("return")
                         pyautogui.keyUp("return")
                         pyautogui.keyDown("t")
                         pyautogui.keyUp("t")
-                        time.sleep(1)  
+                        time.sleep(1)
+                    elif "PSC" in leser[-1].upper():
+                        print("Bot")
+                    elif "PAYSAFE" in leser[-1].upper():
+                        print("Bot")
                     else:
                         ausg = leser[-1]
-                        teiler = ausg.split(" ")
-                        item = teiler[-2].strip().upper()
-                        with open('itemwert.txt','r', encoding="utf-8") as itemwert:
-                            alle = itemwert.readlines()
-                            sammler.append(alle)
-                        for i in alle:
-                            such = i.strip().split("=")
-                            if item == such[0].strip():
+                        teiler = ausg.split("]")
+                        item = teiler[-1].strip()
+                        if 2 < len(item) < 20:
+                            ruck = suche.Votebot.start(item)
+                            if ruck != 0:
                                 pyautogui.keyDown("Ctrl")
                                 pyautogui.keyDown("a")
                                 pyautogui.keyUp("a")
                                 pyautogui.keyUp("Ctrl")
-                                pyautogui.write("/r [BOT]"+item+" Preis Lautet ca: "+such[1])
+                                pyautogui.write("/msg "+name+" [BOT] "+item+" Preis Lautet ca: "+ruck)
+                                time.sleep(0.5)
                                 pyautogui.keyDown("return")
                                 pyautogui.keyUp("return")
                                 pyautogui.keyDown("t")
                                 pyautogui.keyUp("t")
                                 time.sleep(1)
                                 erledigt = 1
-                                break
-                        if erledigt == 0:
-                            itemwert.close()
-                            pyautogui.keyDown("Ctrl")
-                            pyautogui.keyDown("a")
-                            pyautogui.keyUp("a")
-                            pyautogui.keyUp("Ctrl")        
-                            pyautogui.write("/r [BOT]Solltest du keinen Preis erhalten haben Fehlt dieser uns!["+spamschutz+"]")
-                            pyautogui.keyDown("return")
-                            pyautogui.keyUp("return")
-                            pyautogui.keyDown("t")
-                            pyautogui.keyUp("t")
-                            time.sleep(1)
-                        else:
-                            itemwert.close()
-                            erledigt = 0                                
+                            if erledigt == 0:
+                                pyautogui.keyDown("Ctrl")
+                                pyautogui.keyDown("a")
+                                pyautogui.keyUp("a")
+                                pyautogui.keyUp("Ctrl")        
+                                pyautogui.write("/msg "+name+" [BOT]Solltest du keinen Preis erhalten haben Fehlt dieser!["+spamschutz+"]")
+                                pyautogui.keyDown("return")
+                                pyautogui.keyUp("return")
+                                pyautogui.keyDown("t")
+                                pyautogui.keyUp("t")
+                                time.sleep(1)
+                            else:
+                                erledigt = 0                                
 
 
             datei.close()

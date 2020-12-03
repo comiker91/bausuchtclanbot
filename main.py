@@ -21,7 +21,7 @@ def preiseauskunfts(*event):
     if bis == "":
         welcome_label.config(text="Wir konnten keine Zeit erkennen! Programm erneut starten!")
     else:
-        preisauskunft.preise(welcome_label,bis,warten)
+        preisauskunft.preisauskunft.preise(welcome_label,bis,warten)
 
 def scammabfrages(*event):
     global welcome_label, warten
@@ -38,6 +38,9 @@ def kombi(*event):
         welcome_label.config(text="Wir konnten keine Zeit erkennen! Programm erneut starten!")
     else:
         scammpreiskombi.scammabfrage.scammer(welcome_label,bis,warten)
+
+
+
     
 
 
