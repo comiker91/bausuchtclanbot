@@ -89,7 +89,19 @@ class preisauskunft():
                                 pyautogui.keyUp("t")
                                 time.sleep(1)
                             else:
-                                erledigt = 0                                
+                                erledigt = 0   
+                        else:
+                            pyautogui.keyDown("Ctrl")
+                            pyautogui.keyDown("a")
+                            pyautogui.keyUp("a")
+                            pyautogui.keyUp("Ctrl")
+                            pyautogui.write("/msg "+name+" [BOT] Das item muss zwischen 3 und 19 Zeichen haben!")
+                            time.sleep(0.5)
+                            pyautogui.keyDown("return")
+                            pyautogui.keyUp("return")
+                            pyautogui.keyDown("t")
+                            pyautogui.keyUp("t")
+                            time.sleep(1)                                                         
 
 
             datei.close()

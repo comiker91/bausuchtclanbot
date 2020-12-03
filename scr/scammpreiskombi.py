@@ -100,7 +100,7 @@ class scammabfrage():
                             time.sleep(warten)    
 
                             while datetime.now().strftime('%H:%M') != bis:
-                                global datei, ausgegeben, erledigt
+                                
                                 datei =  open(os.getenv("APPDATA")+"/.minecraft/logs/latest.log", "r")
                                 leser = datei.readlines()
                                 letters = string.ascii_lowercase
