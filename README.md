@@ -24,5 +24,4 @@ Es kommt immer wieder zu Updates weshalb darauf Hingewisen wird das sich
 das programm Aktuell noch in der Beta befindet. Die Abrage von Items ist
 nun etwas Langsamer, dafür immer Aktuell mit Bauwert abgeglichen. In
 Seltenen Fällen werden Falsche Items erkannt. In diesem Fall bitte melden
-bei webmaster@nightmaremc.de ! Beachtet bitte das es über diese E-Mail
-KEINEN Support gibt. 
+bei [Issuse](https://github.com/comiker91/bausuchtclanbot/issues) ! 
