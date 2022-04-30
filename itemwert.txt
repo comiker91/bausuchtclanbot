@@ -176,5 +176,4 @@ WITHERKELETTSCHÄDEL = 25.000
 ANNENAC = Unbezahlbar
 SVW_WILLY = Bier!
 KLEINBIER = Er waere gern ein Grosses!
-GEN_RETSNOM = Ein Twitch Abo!
 UNKNOWNICK = Karte bei ihm kaufen!
